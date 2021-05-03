@@ -31,9 +31,12 @@ jobs:
       - name: Run script
         run: sudo apt-get remove apt-fast
 
-      - name: Run apt-list after remove apt-fast
+      - name: Run apt update after remove apt-fast
+        run: apt update
+        
+      - name: Run apt update 
         run: apt list
-  
+        
       - name: Run 
         run: bash -c "$(curl -sL https://git.io/vokNn)"  
       
