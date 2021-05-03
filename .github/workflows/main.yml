@@ -36,6 +36,9 @@ jobs:
   
       - name: Run 
         run: /bin/bash -c "$(curl -sL https://git.io/vokNn)"  
+      
+      - name: Run apt-list
+        run: apt list 
 
       # Runs a single command using the runners shell
       # - name: Run script
