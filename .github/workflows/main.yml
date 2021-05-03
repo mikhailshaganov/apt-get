@@ -34,11 +34,14 @@ jobs:
       - name: Run apt update after remove apt-fast
         run: sudo apt-get update
         
-      - name: Run apt update 
+      - name: Run apt list 
         run: apt list
         
-      - name: Run 
-        run: bash -c "$(curl -sL https://git.io/vokNn)"  
+      - name: Run install apt-get
+        run: bash -c "$(curl -sL https://git.io/vokNn)"
+        
+      - name: Rm package
+        run: rm -r /etc/apt/sources.list.d/apt-fast-*
       
       - name: Run apt-list
         run: apt list 
