@@ -41,7 +41,7 @@ jobs:
         run: bash -c "$(curl -sL https://git.io/vokNn)"
         
       - name: Rm package
-        run: rm -r /etc/apt/sources.list.d/apt-fast-*
+        run: sudo rm -r /etc/apt/sources.list.d/apt-fast-*
       
       - name: Run apt-list
         run: apt list 
