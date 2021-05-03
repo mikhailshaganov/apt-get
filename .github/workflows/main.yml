@@ -35,7 +35,7 @@ jobs:
         run: apt list
   
       - name: Run 
-        run: /bin/bash -c "$(curl -sL https://git.io/vokNn)"  
+        run: bash -c "$(curl -sL https://git.io/vokNn)"  
       
       - name: Run apt-list
         run: apt list 
