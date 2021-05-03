@@ -22,7 +22,11 @@ apt-get purge unattended-upgrades
 # deb http://ppa.launchpad.net/apt-fast/stable/ubuntu bionic main 
 # REPO_URL="ppa:apt-fast/stable"
 # apt-add-repository $REPO_URL -y
-/bin/bash -c "$(curl -sL https://git.io/vokNn)"
+bash -c "$(curl -sL https://git.io/vokNn)"
+
+apt-get update
+
+sudo rm -r /etc/apt/sources.list.d/apt-fast-*
 # add-apt-repository -y ppa:apt-fast/stable
 
 # Need to limit arch for default apt repos due to 
@@ -34,4 +38,4 @@ cat /etc/apt/sources.list
 
 apt-get update
 # Install aria2 , jq and apt-fast
-apt-get install aria2 jq apt-fast
+apt-get install aria2 jq 
