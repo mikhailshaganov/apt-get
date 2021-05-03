@@ -26,13 +26,13 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run apt-list
-        run: apt-list
+        run: apt list
 
       - name: Run script
         run: sudo apt-get remove apt-fast
 
       - name: Run apt-list after remove apt-fast
-        run: apt-list
+        run: apt list
   
       - name: Run 
         run: /bin/bash -c "$(curl -sL https://git.io/vokNn)"  
