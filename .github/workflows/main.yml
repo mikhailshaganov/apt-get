@@ -26,10 +26,12 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run apt-list
-        run: apt list --installed
-      
-      - name: Apt update
-        run: ./apt.sh
+        shell: pwsh
+        run: | 
+              $versionFileContent = Get-Content "/usr/local/sbin/apt-fast"
+              $match = [Regex]::Match($versionFileContent, '# apt-fast v(.+)\n')
+              $aptFastVersion = $match.Groups[0].Value
+              return "apt-fast $aptFastVersion"
 
       # - name: Run script
       #   run: sudo apt-get remove apt-fast
