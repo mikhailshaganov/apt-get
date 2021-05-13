@@ -25,15 +25,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - name: Run apt sh
-        run: ./apt.sh
+#       - name: Run apt sh
+#         run: ./apt.sh
 
       - name: Run apt-list
         shell: pwsh
         run: | 
-              $versionFileContent = Get-Content "/usr/local/sbin/apt-fast"
+              $versionFileContent = Get-Content "/usr/local/bin/apt-fast"
               $match = [Regex]::Match($versionFileContent, '# apt-fast v(.+)\n')
-              $aptFastVersion = $match.Groups[0].Value
+              $aptFastVersion = $match.Groups[1].Value
               return "apt-fast $aptFastVersion"
 
       # - name: Run script
