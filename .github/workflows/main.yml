@@ -27,7 +27,7 @@ jobs:
       
       - name: Run apt-list
         shell: pwsh
-        run: ./apt.sh
+        run: sudo ./apt.sh
 
       - name: Run apt-list
         shell: pwsh
