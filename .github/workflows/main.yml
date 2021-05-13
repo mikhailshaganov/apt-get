@@ -31,7 +31,7 @@ jobs:
       - name: Run apt-list
         shell: pwsh
         run: | 
-              $versionFileContent = Get-Content "./usr/local/sbin/apt-fast"
+              $versionFileContent = Get-Content "/usr/local/sbin/apt-fast"
               $match = [Regex]::Match($versionFileContent, '# apt-fast v(.+)\n')
               $aptFastVersion = $match.Groups[1].Value
               return "apt-fast $aptFastVersion"
